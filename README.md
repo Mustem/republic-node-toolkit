@@ -8,6 +8,7 @@ A small toolkit for node operators using WSL, Bash, and simple monitoring utilit
 - Disk usage check
 - Simple process check
 - Combined node health report
+- Quick log tail helper
 - Quick command line workflow
 - WSL-friendly setup
 
@@ -44,6 +45,9 @@ Shows a combined quick report:
 - disk
 - top processes snapshot
 
+### tail_logs.sh
+Shows the last lines of a selected log file.
+
 ## Usage
 
 Run:
@@ -51,10 +55,10 @@ bash scripts/check_system.sh
 bash scripts/check_disk.sh
 bash scripts/check_process.sh bash
 bash scripts/node_health_report.sh
+bash scripts/tail_logs.sh /var/log/syslog 20
 
 ## Roadmap
 
-- Add log watcher helpers
 - Add restart helper
 - Add optional node-specific checks
 - Add exportable report output
