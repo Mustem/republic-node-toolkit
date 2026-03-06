@@ -6,8 +6,8 @@ A small toolkit for node operators using WSL, Bash, and simple monitoring utilit
 
 - Basic system information check
 - Disk usage check
+- Simple process check
 - Quick command line workflow
-- Simple structure for future node/operator scripts
 - WSL-friendly setup
 
 ## Project Structure
@@ -31,15 +31,19 @@ Shows:
 - filesystem usage
 - directory sizes in current path
 
+### check_process.sh
+Checks whether a process name appears in the current process list.
+
 ## Usage
 
 Run:
 bash scripts/check_system.sh
 bash scripts/check_disk.sh
+bash scripts/check_process.sh bash
 
 ## Roadmap
 
-- Add process checker
 - Add health report script
 - Add log watcher helpers
 - Add restart helper
+- Add optional node-specific checks
