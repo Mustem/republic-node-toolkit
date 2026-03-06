@@ -1,0 +1,19 @@
+=== Republic Node Toolkit: Node Health Report ===
+
+[1/5] Hostname
+mustafa-wsl
+
+[2/5] Current User
+mustafagul
+
+[3/5] Uptime
+up 3 hours, 42 minutes
+
+[4/5] Memory
+total        used        free      shared  buff/cache   available
+
+[5/5] Disk
+Filesystem      Size  Used Avail Use% Mounted on
+
+=== Process Snapshot ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
