@@ -1,0 +1,16 @@
+=== Republic Node Toolkit: System Check ===
+
+Hostname:
+mustafa-wsl
+
+User:
+mustafagul
+
+Uptime:
+up 2 hours, 14 minutes
+
+Memory:
+total        used        free      shared  buff/cache   available
+
+Disk Usage:
+Filesystem      Size  Used Avail Use% Mounted on
