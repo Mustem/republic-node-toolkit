@@ -1,14 +1,13 @@
 #!/bin/bash
 
-DATE=$(date)
+DATE=$(date +%s)
 
-# gerçekçi activity üret
 echo "heartbeat: $DATE" >> activity.log
 echo "node-check: $DATE" >> health.log
+echo "$DATE" >> random.log
 
-# git işlemleri
-git add .
+git add -A
 
-git commit -m "chore: hourly node health update - $DATE"
+git commit -m "chore: hourly update $DATE"
 
 git push origin main
