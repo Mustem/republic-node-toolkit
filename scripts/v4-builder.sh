@@ -37,3 +37,8 @@ echo "- updated: $TS" >> reports/report.md
 git add -A
 git commit -m "chore(v4): dashboard update $UNIX"
 git push origin main
+# Skip commit if no changes
+if git diff --quiet && git diff --cached --quiet; then
+  echo "[v4] No changes detected - skipping commit"
+  exit 0
+fi
