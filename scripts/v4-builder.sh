@@ -3,16 +3,17 @@
 TS=$(date)
 UNIX=$(date +%s)
 
-# 1. HEALTH DATA (REAL PROJECT OUTPUT)
-mkdir -p dashboard
+# klasörleri garanti et
+mkdir -p dashboard logs reports config
 
+# 1. JSON status (dashboard için)
 echo "{
   \"status\": \"ok\",
   \"timestamp\": \"$TS\",
   \"unix\": $UNIX
 }" > dashboard/status.json
 
-# 2. MARKDOWN DASHBOARD
+# 2. Markdown dashboard
 cat > dashboard/index.md << EOF
 # Republic Node Dashboard
 
@@ -25,20 +26,26 @@ cat > dashboard/index.md << EOF
 - Sync: healthy
 EOF
 
-# 3. LOGS
+# 3. LOG (her zaman değişir)
 echo "[OK] $TS system heartbeat" >> logs/system.log
 
-# 4. REPORT (REAL DEV ARTIFACT)
+# 4. REPORT
 echo "# Report $TS" > reports/report.md
 echo "- system ok" >> reports/report.md
 echo "- updated: $TS" >> reports/report.md
 
-# 5. GIT
+# 🔥 5. KRİTİK: HER ZAMAN DEĞİŞEN CONFIG (commit garantisi)
+echo "last_run=$UNIX" > config/runtime.env
+
+# git işlemleri
 git add -A
-git commit -m "chore(v4): dashboard update $UNIX"
-git push origin main
-# Skip commit if no changes
+
+# değişiklik yoksa commit atma
 if git diff --quiet && git diff --cached --quiet; then
   echo "[v4] No changes detected - skipping commit"
   exit 0
 fi
+
+git commit -m "chore(v4): dashboard update $UNIX"
+
+git push origin gh-pages
